@@ -31,4 +31,16 @@ export class DragDropSampleComponent {
         this.draggingElem = false;
         this.cdr.detectChanges();
     }
+
+    public elemDrop(event) {
+        console.log('Drop x:' + event.offsetX + ' y:' + event.offsetY );
+    }
+
+    public elemEnter(event) {
+        console.log('Enter x:' + event.offsetX + ' y:' + event.offsetY );
+    }
+
+    public elemLeave(event) {
+        console.log('Leave x:' + event.offsetX + ' y:' + event.offsetY );
+    }
 }
