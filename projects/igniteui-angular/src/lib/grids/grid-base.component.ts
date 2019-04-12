@@ -4082,6 +4082,8 @@ export abstract class IgxGridBaseComponent extends DisplayDensityBase implements
         this.markForCheck();
     }
 
+    private flag = 0;
+
     /**
      * @hidden
      */
@@ -4094,6 +4096,10 @@ export abstract class IgxGridBaseComponent extends DisplayDensityBase implements
             sizing process which of course, uses values from the caches, thus resulting
             in a broken layout.
         */
+        if (this.flag < 2) {
+            this.flag++;
+            return;
+        }
         this.resetCaches();
         const hasScroll = this.hasVerticalSroll();
         this.calculateGridWidth();
